@@ -5,6 +5,7 @@ import {CreateArticleDto} from "./dto/create-article.dto";
 export class ContentsService {
 
     async create(createVerificationArticleDto: CreateArticleDto) : Promise<string>{
-        return "213";
+
+        return createVerificationArticleDto.articleName;
     }
 }

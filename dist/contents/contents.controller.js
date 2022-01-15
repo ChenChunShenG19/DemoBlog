@@ -21,11 +21,21 @@ let ContentsController = class ContentsController {
     constructor(contentsService) {
         this.contentsService = contentsService;
     }
+    findAll() {
+        return '这里应该有所有的帖子';
+    }
     async create(createVerificationArticleDto) {
-        const ruleId = await this.contentsService.create(createVerificationArticleDto);
-        return { articleId: ruleId };
+        const article = await this.contentsService.create(createVerificationArticleDto);
+        return { articleId: article };
     }
 };
+__decorate([
+    (0, common_1.Get)(),
+    (0, swagger_1.ApiOperation)({ summary: '查看所有帖子List' }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ContentsController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.HttpCode)(common_1.HttpStatus.CREATED),

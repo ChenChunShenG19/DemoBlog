@@ -8,7 +8,7 @@ import {ContentsService} from "./contents.service";
 export class ContentsController {
     constructor(
         private readonly contentsService: ContentsService,){}
-    
+
     @Get()
     @ApiOperation({summary:'查看所有帖子List'})
     findAll(){

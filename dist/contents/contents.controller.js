@@ -26,7 +26,7 @@ let ContentsController = class ContentsController {
     }
     async create(createVerificationArticleDto) {
         const article = await this.contentsService.create(createVerificationArticleDto);
-        return { articleId: article };
+        return { articleId: article.id };
     }
 };
 __decorate([

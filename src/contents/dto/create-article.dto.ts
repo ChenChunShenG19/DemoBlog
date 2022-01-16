@@ -1,4 +1,5 @@
-import {IsBoolean, IsString} from 'class-validator';
+import {IsBoolean, IsOptional, IsString} from 'class-validator';
+import {article } from '@prisma/client';
 
 export class CreateArticleDto {
 
@@ -6,6 +7,9 @@ export class CreateArticleDto {
     articleName: string;
 
     @IsBoolean()
+    @IsOptional()
     isActive?: boolean;
 
 }
+
+export type ArticleCreateResult = Pick<article, 'id'>;

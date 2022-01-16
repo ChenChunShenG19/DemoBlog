@@ -27,7 +27,7 @@ export class ContentsController {
     async create(@Body() createVerificationArticleDto?: CreateArticleDto): Promise<{ articleId: string }> {
         //'这里增加一篇新帖子';
         const article = await this.contentsService.create(createVerificationArticleDto);
-        return { articleId: article };
+        return { articleId: article.id };
     }
 
 }
